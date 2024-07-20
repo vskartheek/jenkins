@@ -6,5 +6,10 @@ pipeline {
                 git branch: 'main', url: 'https://github.com/vskartheek/jenkins.git'
             }
         }
+          stage('install server on node'){
+            steps{
+               ansiblePlaybook inventory: 'dev', playbook: 'playbook1.yml', sudo: true, vaultTmpPath: ''
+            }
+        }
     }
 }
