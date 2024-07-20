@@ -8,7 +8,7 @@ pipeline {
         }
           stage('install server on node'){
             steps{
-               ansiblePlaybook inventory: 'dev', playbook: 'playbook1.yml', vaultTmpPath: ''
+               ansiblePlaybook credentialsId: '8e390fc3-0441-4d1c-b315-00cdd6117392', inventory: 'dev', playbook: 'playbook1.yml', vaultTmpPath: ''
             }
         }
     }
