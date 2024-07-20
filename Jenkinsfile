@@ -8,13 +8,9 @@ pipeline {
         }
         stage('install web server on client'){
                 steps{
-                        ansiblePlaybook playbook: 'playbook1.yml', vaultTmpPath: ''
+                        ansiblePlaybook credentialsId: '8e390fc3-0441-4d1c-b315-00cdd6117392', inventory: '/var/lib/jenkins/workspace/pipeline1', playbook: '/var/lib/jenkins/workspace/pipeline1/playbook1.yml', vaultTmpPath: ''
                 }
             }
-        stage('deploy application'){
-                steps{
-                        ansiblePlaybook playbook: 'playbook2.yml', vaultTmpPath: ''
-                }
-            }
+       
     }
 }
