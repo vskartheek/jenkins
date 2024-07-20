@@ -8,7 +8,7 @@ pipeline {
         }
           stage('install server on node'){
             steps{
-               ansiblePlaybook inventory: 'dev', playbook: 'playbook1.yml', sudo: true, vaultTmpPath: ''
+               ansiblePlaybook inventory: 'dev', playbook: 'playbook1.yml', vaultTmpPath: ''
             }
         }
     }
